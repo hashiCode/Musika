@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Musika</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="nav_menu_all_music">Musics</string>
+    <string name="nav_menu_settings">Setings</string>
+    <string name="nav_menu_equalizer">Equalizer</string>
+
+    <string name="browse_musics">Musics</string>
+    <string name="browse_artists">Artists</string>
+
+    <string name="total_artist">%1$s artist(s).</string>
+    <string name="total_music">%1$s musics(s).</string>
+    <string name="permission_denied">Musika cannot run without aceessing external storage</string>
+
+    <string name="musika_preference">MusikaPreference</string>
+</resources>

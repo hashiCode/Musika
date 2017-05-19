@@ -1,0 +1,69 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hashicode.musika">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--Need to have at least an  accelerometer, gyroscope-->
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.hashicode.musika.MusicActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.hashicode.musika.FullMusicPlayerActivity"
+            android:launchMode="singleTop"
+            android:label=""
+            android:parentActivityName="com.hashicode.musika.MusicActivity"
+            android:theme="@style/TransparentActionBarTheme"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hashicode.musika.MusicActivity"/>
+        </activity>
+
+        <activity
+            android:name="com.hashicode.musika.PreferenceActivity"
+            android:label="@string/nav_menu_settings"
+            android:theme="@style/ActionBarTheme"
+            android:parentActivityName="com.hashicode.musika.MusicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hashicode.musika.MusicActivity"/>
+        </activity>
+
+        <activity
+            android:name="com.hashicode.musika.EqualizerActivity"
+            android:label="@string/nav_menu_equalizer"
+            android:theme="@style/ActionBarTheme"
+            android:parentActivityName="com.hashicode.musika.MusicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.hashicode.musika.MusicActivity"/>
+        </activity>
+
+        <service android:name="com.hashicode.musika.service.MusicMediaService" android:exported="true" >
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
